@@ -1,0 +1,19 @@
+package.json is a configuration file for npm. It has approx versions of package in it.
+
+package-lock.json has xact versions of all the packages that our project wants.
+
+We should put package.json and package-lock.json on git.
+
+node modules is a database of dependencies
+
+React elements are JS objects
+
+We can install 2 types of Dependencies: DEV and Normal Dependency. 
+Normal Dependency is for production
+
+caret(^) is used for minor upgrades from 2.8.3 to 2.8.4
+tilde(~) is used for major upgrades like from 2.8.4 to 3.0.1
+
+Transitive dependencies: When a package like parcel is installed then it has its own dependencies and 
+that dependencies will have their own dependencies. This is called transitive dependencies.
+
