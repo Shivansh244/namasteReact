@@ -7,6 +7,10 @@ const Body = () => {
 
     const [listOfRestaurants,setListOfRestaurants] = useState([]);
 
+    const[filteredRestaurant,setFilteredRestaurant] = useState([]);
+
+    const[searchText,setSearchText] = useState('');
+
     useEffect(() =>{
       fetchData();
     }, []);
@@ -21,6 +25,7 @@ const Body = () => {
       console.log(json);
 
       setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
 
@@ -31,6 +36,31 @@ const Body = () => {
   
       <div className="body-container">
         <div className="filter">
+          <div className="search">
+            <input 
+              type="text"
+              placeholder="Enter any restaurant"
+              className="searchBox"
+              value={searchText}
+              onChange={(e) =>{
+                setSearchText(e.target.value);
+              }}
+            />
+            <button 
+              onClick={()=>{
+                console.log(searchText);
+            
+                const filteredRestaurant = listOfRestaurants.filter((res)=>
+                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                );
+
+                console.log(filteredRestaurant);
+                setFilteredRestaurant(filteredRestaurant);
+              }}
+            >
+              Search
+            </button>
+          </div>
             <button 
             className="filter-btn"
             onClick={() => {
@@ -46,7 +76,7 @@ const Body = () => {
         </div>
         <div className="res-container">
         {
-          listOfRestaurants.map((restaurant) => (
+          filteredRestaurant.map((restaurant) => (
             <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
           ))}
         
