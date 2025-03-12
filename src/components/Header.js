@@ -9,23 +9,23 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-amber-400">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+        <img className="w-24" src={LOGO_URL}></img>
       </div>
       <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "Online" : "Offline"}</li>
-          <li>
+        <ul className="flex p-4 m-4">
+          <li className="p-4">Online Status: {onlineStatus ? "Online" : "Offline"}</li>
+          <li className="p-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="p-4">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="p-4">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>Cart</li>
+          <li className="p-4">Cart</li>
           <button
             className="login-btn"
             onClick={() => {
