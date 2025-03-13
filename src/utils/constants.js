@@ -4,5 +4,5 @@ export const CDN_URL =
 
 
 export const LOGO_URL = 
-"https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb//vivo/live/images/2015/8/26/090b5b10-437a-467b-9fa1-16808ae8d27c.jpg.webp"
+"https://i.pinimg.com/736x/19/a9/65/19a9657e4490b4c75ea5065f78e97cbe.jpg"
 

@@ -14,20 +14,20 @@ const Header = () => {
         <img className="w-24" src={LOGO_URL}></img>
       </div>
       <div className="nav-items">
-        <ul className="flex p-4 m-4">
-          <li className="p-4">Online Status: {onlineStatus ? "Online" : "Offline"}</li>
-          <li className="p-4">
+        <ul className="flex p-1 m-1">
+          <li className="p-4 font-bold">Online Status: {onlineStatus ? "✅" : "⚫"}</li>
+          <li className="p-4 font-bold hover:bg-amber-50 rounded-lg">
             <Link to="/">Home</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 font-bold hover:bg-amber-50 rounded-lg">
             <Link to="/about">About</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 font-bold hover:bg-amber-50 rounded-lg">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="p-4">Cart</li>
+          <li className="p-4 font-bold">Cart</li>
           <button
-            className="login-btn"
+            className="p-1 m-1 font-bold rounded-lg bg-amber-50"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
