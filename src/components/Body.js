@@ -86,10 +86,10 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
-        <div>
-          <label>userName</label>
+        <div >
+          <label>Edit userName</label>
           <input 
-            className="border-amber-500 p-2"
+            className="border-amber-500 p-2 m-2"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />
